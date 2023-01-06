@@ -1,5 +1,4 @@
 import React from "react";
-
 import { Topbar, Navbar, Mid, Footer } from "./components";
 
 const App = () => {

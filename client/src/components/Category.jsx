@@ -1,6 +1,9 @@
-import React, { useEffect, useState, useRef } from "react";
-import { motion } from "framer-motion";
+import React from "react";
 import { categoryData } from "../data/category";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import CategoryItem from "./CategoryItem";
 
 const billData = [
   { type: "Electricity Bill", active: false },
@@ -9,49 +12,60 @@ const billData = [
   { type: "Top Up", active: false },
 ];
 
-const Category = () => {
-  const [width, setWidth] = useState(0);
-  const sliderWrapper = useRef();
-
-  useEffect(() => {
-    setWidth(
-      sliderWrapper.current.scrollWidth - sliderWrapper.current.offsetWidth
-    );
-  }, []);
-
+const SampleNextArrow = (props) => {
+  const { className, style, onClick } = props;
   return (
-    <div className="flex relative mx-20">
+    <div
+      className={`${className} small-arrow`}
+      style={{
+        ...style,
+        display: "block",
+        zIndex: 10,
+      }}
+      onClick={onClick}
+    />
+  );
+};
+
+const Category = () => {
+  const settings = {
+    infinite: true,
+    speed: 500,
+    slidesToShow: 7,
+    slidesToScroll: 1,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <></>,
+    responsive: [
+      {
+        breakpoint: 1377,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          infinite: true,
+        },
+      },
+    ],
+  };
+  return (
+    <div className="flex relative mx-40">
       <div className="bg-bg_secondary w-[50%] mt-[-130px] h-[200px] z-20 shadow-lg  rounded-xl">
         <div className="flex p-4 ml-1 justify-between">
-          <p className="text-lg tracking-tight text-black font-medium">
+          <p className="text-lg xl:text-xl tracking-tight text-black font-medium">
             Shop by Category
           </p>
-          <p className="text-sm tracking-tight font-medium text-highlight cursor-pointer hover:border-b-2 hover:border-highlight transition">
+          <p className="text-sm xl:text-lg tracking-tight font-medium text-highlight cursor-pointer hover:border-b-2 hover:border-highlight transition">
             See more
           </p>
         </div>
 
-        <motion.div
-          className="overflow-hidden"
-          ref={sliderWrapper}
-          whileTap={{ cursor: "grabbing" }}
+        <Slider
+          className="flex justify-center  px-4 py-1 overflow-hidden"
+          {...settings}
         >
-          <motion.div
-            drag="x"
-            dragConstraints={{ right: 0, left: -width }}
-            className="flex items-center my-2 ml-4"
-          >
-            {categoryData.map((category, categoryIndex) => (
-              <div
-                key={categoryIndex}
-                className="flex flex-col items-center justify-center h-[100px] min-w-[100px] rounded-xl shadow-md ml-3 hover:scale-110 cursor-pointer transition"
-              >
-                <img src={category.cImage} className="w-16" alt="" />
-                <p className="text-md">{category.cName}</p>
-              </div>
-            ))}
-          </motion.div>
-        </motion.div>
+          {categoryData.map((category, categoryIndex) => (
+            <CategoryItem category={category} key={categoryIndex} />
+          ))}
+        </Slider>
       </div>
       <div className="ml-3 bg-bg_secondary w-[50%] mt-[-130px] h-[200px] z-20 shadow-lg rounded-xl">
         <div className="flex mx-2 justify-between items-center text-black/20 text-lg tracking-tight border-b border-black/20 font-primary text-[16px]">
@@ -68,16 +82,16 @@ const Category = () => {
             </div>
           ))}
         </div>
-        <div className="flex items-center mx-5">
-          <div className="flex flex-col mt-6 w-[40%]">
+        <div className="flex items-center justify-center gap-x-2 mx-5">
+          <div className="mt-6 w-[40%]">
             <label
               htmlFor="number"
-              className="text-sm font-medium tracking-tighter mb-2"
+              className="text-sm xl:text-[16px] font-medium tracking-tighter mb-2"
             >
               Phone Number
             </label>
             <div className="flex rounded-lg">
-              <select className="outline-none rounded-l-lg border border-black/10 bg-black/10 p-2 text-sm focus:border focus:border-highlight ">
+              <select className="outline-none rounded-l-lg border border-black/10 bg-black/10 p-2 xl:p-3 text-sm xl:text-[16px] xl:font-bold focus:border focus:border-highlight ">
                 <option value="Nepal">+977</option>
                 <option value="Nepal">+977</option>
                 <option value="Nepal">+977</option>
@@ -86,32 +100,32 @@ const Category = () => {
                 type="number"
                 id="number"
                 placeholder="98-XXXXXXXX"
-                className="border border-black/10 border-l-0 bg-transparent w-full placeholder:text-sm p-2 text-sm rounded-r-lg focus:border focus:border-highlight"
+                className="border border-black/10 border-l-0 bg-transparent w-full placeholder:text-sm p-2 xl:p-3 text-sm xl:text-[16px] xl:font-medium rounded-r-lg focus:border focus:border-highlight"
               />
             </div>
           </div>
-          <div className="flex flex-col mt-6 w-[40%]">
+          <div className="mt-6 w-[40%]">
             <label
               htmlFor="number"
-              className="text-sm font-medium tracking-tighter mb-2 ml-2"
+              className="text-sm xl:text-[16px] font-medium tracking-tighter mb-2 ml-2"
             >
-              Phone Number
+              Select Package
             </label>
 
             <select
               name="package"
               id="package"
               placeholder="98-XXXXXXXX"
-              className="bg-transparent outline-none  w-full ml-2 p-2 border border-black/10 focus:border focus:border-highlight rounded-lg text-sm font-medium cursor-pointer"
+              className="bg-transparent outline-none  w-full ml-2 p-2 xl:p-3 border border-black/10 focus:border focus:border-highlight rounded-lg text-sm xl:text-[16px] font-medium cursor-pointer"
             >
-              <option selected>Choose a package</option>
+              <option defaultValue={""}>Choose a package</option>
               <option value="100GB">100 GB/30 Days</option>
               <option value="100GB_YR">100 GB/1 Year</option>
               <option value="350GB">350 GB/30 Days</option>
               <option value="350GB_YR">350 GB/1 Year</option>
             </select>
           </div>
-          <div className="text-sm px-4 py-[10px] text-white ml-4 mt-12  bg-highlight rounded-lg hover:bg-highlight/90 transition cursor-pointer">
+          <div className="ml-2 mt-11 px-6 py-3 bg-highlight text-white text-12px xl:text-[16px] rounded-lg cursor-pointer hover:bg-[#269e82] transition">
             Buy Now
           </div>
         </div>

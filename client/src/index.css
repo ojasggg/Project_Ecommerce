@@ -15,3 +15,39 @@
     margin: 0;
   }
 }
+
+.slick-prev {
+  background: url("./assets/image/arrow-left.png") center center no-repeat !important;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  left: 15px;
+  top: 45%;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.slick-prev::before {
+  display: none;
+}
+.slick-next {
+  background: url("./assets/image/arrow-right.png") center center no-repeat !important;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  right: 30px;
+  top: 45%;
+}
+.slick-next::before {
+  display: none;
+}
+
+.small-arrow {
+  background: url("./assets/image/small-arrow.png") center center no-repeat !important;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  right: 5px;
+  top: 45%;
+}

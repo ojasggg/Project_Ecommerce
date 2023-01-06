@@ -32,12 +32,16 @@ const Carousel = () => {
     setCurrentIndex(newIndex);
   };
   return (
-    <div className="min-w-screen w-full relative lg:h-[350px] xl:h-[500px] group">
+    <div className="min-w-screen w-full relative h-[350px] xl:h-[500px] group">
       <div
-        className="w-full h-full bg-cover duration-500 object-cover bg-no-repeat"
-        style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
+        className="min-w-full h-full bg-cover duration-500 object-cover bg-no-repeat"
+        style={{
+          backgroundImage: `linear-gradient(to right,${[
+            slides[currentIndex].gradientColor,
+          ]}, transparent 70%),url(${slides[currentIndex].url})`,
+        }}
       ></div>
-      <div className="absolute left-20 top-[12%] z-10">
+      <div className="absolute left-40 top-[12%] z-10">
         {slides[currentIndex].duration && (
           <div className="duration-200">
             <div
@@ -45,7 +49,8 @@ const Carousel = () => {
                 currentIndex == 2 || currentIndex === 4 || currentIndex === 0
                   ? "text-white"
                   : "text-primary"
-              }`}
+              }
+              `}
             >
               {slides[currentIndex].duration}
             </div>

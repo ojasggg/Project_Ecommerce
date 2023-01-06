@@ -29,4 +29,16 @@ export const categoryData = [
     cName: "Bag",
     cImage: Bag,
   },
+  {
+    cName: "Bag",
+    cImage: Bag,
+  },
+  {
+    cName: "Bag",
+    cImage: Bag,
+  },
+  {
+    cName: "Bag",
+    cImage: Bag,
+  },
 ];

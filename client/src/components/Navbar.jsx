@@ -10,7 +10,7 @@ import Profile from "../assets/image/profile.jpg";
 const Navbar = () => {
   return (
     <div className="bg-primary text-white  ">
-      <div className="flex items-center justify-between h-16 py-2 mx-20">
+      <div className="flex items-center justify-between h-16 py-2 mx-40">
         <div className="flex lg:gap-x-6 xl:gap-x-10">
           <div className="flex items-center gap-x-1">
             <HiShoppingBag className="text-[30px] ml-[-5px]" />
@@ -33,7 +33,7 @@ const Navbar = () => {
             <input
               type="text"
               placeholder="Search product here..."
-              className="bg-transparent text-[14px] ml-2 placeholder:text-white/60 placeholder:text-[12px] xl:placeholder:text-[14px] text-white h-full lg:min-w-[400px] xl:min-w-[600px]"
+              className="bg-transparent text-[14px] ml-2 placeholder:text-white/60 placeholder:text-[12px] xl:placeholder:text-[14px] text-white h-full lg:min-w-[400px] xl:min-w-[400px]"
             />
           </div>
           <div className="flex bg-highlight h-full items-center justify-center w-[50px] rounded-tr-lg rounded-br-lg cursor-pointer hover:bg-highlight/80 transition">
