@@ -9,8 +9,8 @@ import Profile from "../assets/image/profile.jpg";
 
 const Navbar = () => {
   return (
-    <div className="bg-primary text-white  ">
-      <div className="flex items-center justify-between h-16 py-2 mx-40">
+    <div className="bg-primary text-white p-2 ">
+      <div className="flex items-center justify-between h-16 py-2 mx-20 xl:mx-60">
         <div className="flex lg:gap-x-6 xl:gap-x-10">
           <div className="flex items-center gap-x-1">
             <HiShoppingBag className="text-[30px] ml-[-5px]" />
@@ -24,7 +24,7 @@ const Navbar = () => {
             <p className="text-[14px]">Kathmandu, Nepal</p>
           </div>
         </div>
-        <div className="flex items-center h-10 lg:ml-[-100px] xl:ml-[-400px]">
+        <div className="flex items-center h-10 lg:ml-[-60px] xl:ml-[-200px]">
           <div className="flex p-4 gap-x-1 items-center bg-dim h-full rounded-tl-lg rounded-bl-lg text-[12px] xl:text-[14px] text-white/60 cursor-pointer hover:bg-dim/60 transition">
             <p>All Category</p>
             <BsFillCaretDownFill />

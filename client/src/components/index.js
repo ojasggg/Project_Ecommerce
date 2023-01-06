@@ -6,3 +6,5 @@ export { default as Carousel } from "./Carousel";
 export { default as Category } from "./Category";
 export { default as Items } from "./Items";
 export { default as Card } from "./Card";
+export { default as Tags } from "./Tags";
+export { default as EntireItems } from "./EntireItems";

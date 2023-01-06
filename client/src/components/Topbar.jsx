@@ -6,7 +6,7 @@ const topbarData = ["Promo", "NepalBuy News", "Help & Center", "Language"];
 const Topbar = () => {
   return (
     <div className="max-sm:hidden bg-secondary text-white/60 font-light ">
-      <div className="flex justify-between mx-40 py-3">
+      <div className="flex justify-between mx-20 xl:mx-60 py-3">
         <div className="flex gap-x-2 items-center cursor-pointer hover:text-white/80 transition">
           {/* Icon */}
           <IoLogoGooglePlaystore className="text-[14px]" />

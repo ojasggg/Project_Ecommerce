@@ -21,7 +21,7 @@
   height: 60px;
   width: 60px;
   border-radius: 50%;
-  left: 15px;
+  left: 14px;
   top: 45%;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
@@ -35,7 +35,7 @@
   width: 60px;
   border-radius: 50%;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  right: 30px;
+  right: 14px;
   top: 45%;
 }
 .slick-next::before {

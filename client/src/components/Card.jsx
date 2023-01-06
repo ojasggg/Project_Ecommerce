@@ -3,7 +3,7 @@ import { AiFillStar } from "react-icons/ai";
 
 const Card = ({ item }) => {
   return (
-    <div className="flex flex-col bg-white xl:ml-3 min-h-[350px] max-w-[250px] rounded-md cursor-pointer">
+    <div className="flex flex-col bg-white xl:ml-2 min-h-[350px] max-w-[250px] rounded-md cursor-pointer">
       <div className="max-h-[250px] w-[250px] overflow-hidden rounded-t-md">
         <img
           src={item.itemImageUrl}

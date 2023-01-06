@@ -52,7 +52,7 @@ const Items = ({ data, heading, timeLeft }) => {
     ],
   };
   return (
-    <div className="mx-40 mt-10 bg-bg_secondary shadow-md min-h-[500px] rounded-xl">
+    <div className="mt-10 bg-bg_secondary shadow-md min-h-[500px] rounded-xl">
       <div className="flex items-center justify-between mx-5  py-5">
         <div className="flex items-center gap-x-6">
           <div className="text-[16px] xl:text-xl font-medium tracking-tight">

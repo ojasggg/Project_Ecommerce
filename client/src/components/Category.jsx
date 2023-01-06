@@ -31,7 +31,7 @@ const Category = () => {
   const settings = {
     infinite: true,
     speed: 500,
-    slidesToShow: 7,
+    slidesToShow: 6,
     slidesToScroll: 1,
     nextArrow: <SampleNextArrow />,
     prevArrow: <></>,
@@ -39,7 +39,7 @@ const Category = () => {
       {
         breakpoint: 1377,
         settings: {
-          slidesToShow: 4,
+          slidesToShow: 5,
           slidesToScroll: 1,
           infinite: true,
         },
@@ -47,7 +47,7 @@ const Category = () => {
     ],
   };
   return (
-    <div className="flex relative mx-40">
+    <div className="flex relative">
       <div className="bg-bg_secondary w-[50%] mt-[-130px] h-[200px] z-20 shadow-lg  rounded-xl">
         <div className="flex p-4 ml-1 justify-between">
           <p className="text-lg xl:text-xl tracking-tight text-black font-medium">
