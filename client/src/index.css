@@ -9,6 +9,10 @@
     @apply outline-none;
   }
 
+  .individual_item_btn {
+    @apply py-3 px-6 text-sm text-black font-medium bg-transparent border border-black/20 rounded-xl hover:bg-advertise hover:border-advertise hover:text-white transition;
+  }
+
   input[type="number"]::-webkit-inner-spin-button,
   input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;

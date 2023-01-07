@@ -39,6 +39,7 @@ const Carousel = () => {
           backgroundImage: `linear-gradient(to right,${[
             slides[currentIndex].gradientColor,
           ]}, transparent 70%),url(${slides[currentIndex].url})`,
+          filter: "blur(12px)",
         }}
       ></div>
       <div className="absolute left-20 xl:left-60 xl:top-[18%] top-[12%] z-10">
