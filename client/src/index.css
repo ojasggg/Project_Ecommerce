@@ -10,7 +10,7 @@
   }
 
   .individual_item_btn {
-    @apply py-3 px-6 text-sm text-black font-medium bg-transparent border border-black/20 rounded-xl hover:bg-advertise hover:border-advertise hover:text-white transition;
+    @apply py-3 px-6 xl:py-4 xl:px-6 text-sm xl:text-[16px] text-black font-medium bg-transparent border border-black/20 rounded-xl hover:bg-highlight hover:border-highlight hover:text-white transition;
   }
 
   input[type="number"]::-webkit-inner-spin-button,

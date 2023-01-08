@@ -11,7 +11,7 @@ import FooterItem from "./FooterItem";
 const Footer = () => {
   return (
     <div className="w-full bg-primary text-white">
-      <div className="flex justify-between mx-20 xl:mx-60 pt-14 pb-16">
+      <div className="flex justify-between mx-20 xl:mx-60 pt-14 pb-14">
         <FooterItem
           heading={"About us"}
           elements={["Blog", "B2B Digital", "Bridestory", "Mitra Blog"]}
@@ -35,7 +35,7 @@ const Footer = () => {
             <HiShoppingBag className="text-[30px] ml-[-5px]" />
             <h1 className="text-2xl font-medium">NepalBuy</h1>
           </div>
-          <p className="w-[350px] text-white/40 mt-4 text-md xl:text-lg">
+          <p className="w-[350px] text-white/40 mt-4 text-md">
             Curious about new developments and updates? follow our social media
           </p>
           <div className="flex items-center gap-x-6 text-white/40 mt-6">
@@ -58,7 +58,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="flex justify-center p-4 text-white/70">
+      <div className="flex justify-center text-sm p-3 text-white/70">
         © 2023 NepalBuy. All rights reserved.
       </div>
     </div>

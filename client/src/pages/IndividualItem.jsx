@@ -22,7 +22,7 @@ const IndividualItem = () => {
         <div className="flex-1 px-8">
           <ItemDescriptions />
         </div>
-        <div className="min-w-[260px] flex-none">
+        <div className="min-w-[260px] xl:min-w-[350px] flex-none">
           <ItemAdvertise />
           <ItemPayout />
           <div className="flex gap-2 items-center mt-6 justify-center">

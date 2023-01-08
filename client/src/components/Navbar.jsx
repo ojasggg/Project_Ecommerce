@@ -40,7 +40,7 @@ const Navbar = () => {
             <FiSearch className="text-lg xl:text-xl hover:scale-110" />
           </div>
         </div>
-        <div className="flex divide-x-2 divide-secondary">
+        <div className="flex divide-x-2 divide-white/20">
           <div className="flex text-white/80 items-center gap-x-6 mr-4">
             <CiShoppingCart
               size={28}

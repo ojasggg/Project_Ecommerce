@@ -5,8 +5,8 @@ import { BsBag, BsFillChatSquareDotsFill, BsShareFill } from "react-icons/bs";
 
 const ItemPayout = () => {
   return (
-    <div className="bg-bg_secondary mt-6 rounded-xl pt-4 p-6">
-      <h5 className="text-[16px] font-medium">Set Order</h5>
+    <div className="bg-bg_secondary mt-6 rounded-xl pt-4 p-6 xl:p-4">
+      <h5 className="text-[16px] xl:text-[20px] font-medium">Set Order</h5>
       <hr className="text-black/10 mb-6 mt-4" />
       <div className="flex gap-3 items-center">
         <img
@@ -46,7 +46,7 @@ const ItemPayout = () => {
           <p>Add to Bag</p>
         </button>
       </div>
-      <div className="flex mt-10 justify-between">
+      <div className="flex mt-10 justify-between xl:justify-around">
         <button className="flex items-center text-sm text-highlight font-medium gap-2">
           <BsFillChatSquareDotsFill />
           <p>Chat Seller</p>

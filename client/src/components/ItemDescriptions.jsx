@@ -39,17 +39,17 @@ const ItemDescriptions = () => {
         </div>
       </div>
       <div className="mt-6">
-        <ul className="flex justify-start items-center gap-x-12 mx-2 border-b border-black/20 text-[16px] font-medium text-black/40">
-          <li className="text-center hover:text-highlight p-3 ">
+        <div className="flex justify-start items-center gap-x-12 mx-2 border-b border-black/20 text-[14px] font-medium text-black/40">
+          <div className="text-center hover:text-highlight hover:bg-highlight/20 hover:rounded-xl p-3 transition">
             <a href="#">About Items</a>
-          </li>
-          <li className="text-center hover:text-highlight p-3 ">
+          </div>
+          <div className="text-center hover:text-highlight  hover:bg-highlight/20 hover:rounded-xl p-3 transition">
             <a href="#">Reviews</a>
-          </li>
-        </ul>
+          </div>
+        </div>
 
-        <div className="flex justify-start gap-x-36 mt-6">
-          <ul className="flex flex-col justify-start gap-y-2 text-[14px]">
+        <div className="flex justify-start gap-x-36 mt-4">
+          <ul className="flex flex-col justify-start gap-y-3 text-[14px]">
             <li>
               <span className="text-black/40">Brand: </span>
               <strong>ChAmkpR</strong>
@@ -64,7 +64,7 @@ const ItemDescriptions = () => {
             </li>
           </ul>
 
-          <ul className="flex flex-col justify-start gap-y-2 text-[14px]">
+          <ul className="flex flex-col justify-start gap-y-3 text-[14px]">
             <li>
               <span className="text-black/40">Color: </span>
               <strong>Aprikot</strong>
@@ -79,7 +79,7 @@ const ItemDescriptions = () => {
             </li>
           </ul>
         </div>
-        <div className="mt-6">
+        <div className="mt-8">
           <h6 className="text-[16px] font-medium">Description:</h6>
           <ul className="mt-2 list-disc ml-8 text-[14px] text-black/60 font-medium leading-6">
             <li>
@@ -94,7 +94,9 @@ const ItemDescriptions = () => {
           <p className="text-[14px] text-black/60 mt-6 font-medium">
             Chat us if there is anything you need to ask about the product.
           </p>
-          <button className="mt-6 text-highlight font-medium">See less</button>
+          <button className="mt-6 text-highlight text-sm font-medium">
+            See less
+          </button>
         </div>
         <div className="mt-8">
           <h6 className="text-[16px] font-medium">Shippings Information:</h6>
