@@ -14,3 +14,8 @@ export { default as ItemDescriptions } from "./ItemDescriptions";
 export { default as ItemPayout } from "./ItemPayout";
 export { default as ItemAdvertise } from "./ItemAdvertise";
 export { default as ItemReviews } from "./ItemReviews";
+export { default as CartDetails } from "./CartDetails";
+export { default as PaymentMethod } from "./PaymentMethod";
+export { default as YourOrder } from "./YourOrder";
+export { default as CartUser } from "./CartUser";
+export { default as ShippingAddress } from "./ShippingAddress";

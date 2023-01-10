@@ -13,7 +13,10 @@ const IndividualItem = () => {
   return (
     <div className="mx-20 xl:mx-60">
       <div>
-        <Breadcrumbs />
+        <Breadcrumbs
+          paths={["Home", "Men's Fashion", "Men's top", "Casual Shirt"]}
+          current={"Essentials Men's Regular-Fit Long-Sleeve Oxford Shirt"}
+        />
       </div>
       <div className="flex mt-4">
         <div className="max-w-[400px]">
