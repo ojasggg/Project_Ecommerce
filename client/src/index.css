@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+@tailwind base;
+@tailwind utilities;
+@tailwind components;
+
+@layer base {
+  input {
+    @apply outline-none;
+  }
+
+  .individual_item_btn {
+    @apply py-3 px-6 xl:py-4 xl:px-6 text-sm xl:text-[16px] text-black font-medium bg-transparent border border-black/20 rounded-xl hover:bg-highlight hover:border-highlight hover:text-white transition;
+  }
+
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+.slick-prev {
+  background: url("./assets/image/arrow-left.png") center center no-repeat !important;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  left: 14px;
+  top: 45%;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.slick-prev::before {
+  display: none;
+}
+.slick-next {
+  background: url("./assets/image/arrow-right.png") center center no-repeat !important;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  right: 14px;
+  top: 45%;
+}
+.slick-next::before {
+  display: none;
+}
+
+.small-arrow {
+  background: url("./assets/image/small-arrow.png") center center no-repeat !important;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  right: 5px;
+  top: 45%;
+}
