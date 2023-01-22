@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import Seller from "./seller.model.js";
+// import Seller from "./seller.model.js";
 
 const CategorySchema = new mongoose.Schema(
   {
@@ -9,7 +9,7 @@ const CategorySchema = new mongoose.Schema(
     },
     categoryListedBy: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: Seller,
+      ref: "Seller",
       required: true,
     },
   },

@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-import Seller from "./seller.model.js";
 
 const ProductSchema = new mongoose.Schema(
   {
@@ -18,9 +17,11 @@ const ProductSchema = new mongoose.Schema(
     discount: {
       isDiscount: {
         type: Boolean,
+        default: false,
       },
       discountPercent: {
         type: Number,
+        default: 0,
       },
     },
     averageRating: {
@@ -29,14 +30,15 @@ const ProductSchema = new mongoose.Schema(
     },
     productPictures: {
       type: [String],
+      // required : true
     },
     category: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: Category,
+      ref: "Category",
     },
     listedBy: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: Seller,
+      ref: "Seller",
     },
   },
   { timestamps: true }

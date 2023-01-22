@@ -1,17 +1,15 @@
 import mongoose from "mongoose";
-import Product from "./product.model.js";
-import Customer from "./customer.model.js";
 
 const CartItemSchema = new mongoose.Schema(
   {
     productId: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: Product,
+      ref: "Product",
       required: true,
     },
     customerId: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: Customer,
+      ref: "Customer",
       required: true,
     },
     quantity: {
