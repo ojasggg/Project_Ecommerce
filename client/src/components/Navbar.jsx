@@ -7,9 +7,23 @@ import { CiShoppingCart, CiBellOn } from "react-icons/ci";
 
 import Profile from "../assets/image/profile.jpg";
 import { Link } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
 
-const Navbar = () => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+const Navbar = ({ isAuthenticated }) => {
+  const [profileDropDown, setProfileDropDown] = useState(false);
+
+  const handleLogout = () => {
+    toast.success("Logout Successful", {
+      position: "bottom-right",
+      autoClose: 3000,
+      pauseOnHover: false,
+    });
+    localStorage.removeItem("auth_token");
+    setTimeout(
+      () => window.location.replace("http://127.0.0.1:5173/login"),
+      3000
+    );
+  };
   return (
     <div className="bg-primary text-white p-2 ">
       <div className="flex items-center justify-between h-16 py-2 mx-20 xl:mx-60">
@@ -57,13 +71,55 @@ const Navbar = () => {
               />
             </div>
 
-            <div className="flex items-center text-white/60 gap-x-6 cursor-pointer">
-              <img
-                src={Profile}
-                alt="profile"
-                className="rounded-full w-[34px] ml-5 hover:scale-110 transition"
-              />
-              <BsFillCaretDownFill size={15} />
+            <div className="relative">
+              <div
+                className="flex items-center text-white/60 gap-x-6 cursor-pointer"
+                data-dropdown-toggle="dropdownInformation"
+              >
+                <Link to="/profile">
+                  <img
+                    src={Profile}
+                    alt="profile"
+                    className="rounded-full w-[34px] ml-5 hover:scale-110 transition"
+                  />
+                </Link>
+                <div onClick={() => setProfileDropDown((prev) => !prev)}>
+                  <BsFillCaretDownFill size={15} />
+                </div>
+              </div>
+              <div
+                id="dropdownInformation"
+                class={`${
+                  profileDropDown ? "" : "hidden"
+                } absolute flex flex-col z-[9999] bg-secondary rounded-lg top-12 left-[-5px] h-fit w-[160px]`}
+              >
+                <div className="flex flex-col items-center p-3">
+                  <h3 className="text-sm font-bold">Ojash Gurung</h3>
+                  <p className="text-[12px] text-white/60">Verified Customer</p>
+                </div>
+                <div className="mx-2 bg-white/20 h-[1px]"></div>
+                <ul className="flex flex-col items-center text-sm">
+                  <li className="dropdown_item">
+                    <Link to="/profile">Profile</Link>
+                  </li>
+                  <li className="dropdown_item">
+                    <Link to="/cart">Cart</Link>
+                  </li>
+                  <li className="dropdown_item">
+                    <Link to="/liked">Liked</Link>
+                  </li>
+                  <li className="dropdown_item">
+                    <Link to="/setting">Setting</Link>
+                  </li>
+                </ul>
+                <div className="mx-2 bg-white/20 h-[1px]"></div>
+                <button
+                  className="flex flex-col items-center p-3 hover:bg-white/10 text-white/80 hover:text-white transition"
+                  onClick={handleLogout}
+                >
+                  Logout
+                </button>
+              </div>
             </div>
           </div>
         ) : (
@@ -78,6 +134,7 @@ const Navbar = () => {
           </div>
         )}
       </div>
+      <ToastContainer />
     </div>
   );
 };
