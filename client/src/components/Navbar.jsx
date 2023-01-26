@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { HiShoppingBag } from "react-icons/hi";
 import { IoLocationSharp } from "react-icons/io5";
 import { BsFillCaretDownFill } from "react-icons/bs";
@@ -6,16 +6,20 @@ import { FiSearch } from "react-icons/fi";
 import { CiShoppingCart, CiBellOn } from "react-icons/ci";
 
 import Profile from "../assets/image/profile.jpg";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   return (
     <div className="bg-primary text-white p-2 ">
       <div className="flex items-center justify-between h-16 py-2 mx-20 xl:mx-60">
         <div className="flex lg:gap-x-6 xl:gap-x-10">
-          <div className="flex items-center gap-x-1">
-            <HiShoppingBag className="text-[30px] ml-[-5px]" />
-            <h1 className="font-light text-[24px]">NepalBuy</h1>
-          </div>
+          <Link to="/">
+            <div className="flex items-center gap-x-1">
+              <HiShoppingBag className="text-[30px] ml-[-5px]" />
+              <h1 className="font-light text-[24px]">NepalBuy</h1>
+            </div>
+          </Link>
           <div className="flex flex-col">
             <div className="flex gap-x-1 items-center text-[10px] text-white/60">
               <IoLocationSharp className="text-[12px]" />
@@ -40,27 +44,39 @@ const Navbar = () => {
             <FiSearch className="text-lg xl:text-xl hover:scale-110" />
           </div>
         </div>
-        <div className="flex divide-x-2 divide-white/20">
-          <div className="flex text-white/80 items-center gap-x-6 mr-4">
-            <CiShoppingCart
-              size={28}
-              className="hover:scale-110 cursor-pointer transition"
-            />
-            <CiBellOn
-              size={28}
-              className="hover:scale-110 cursor-pointer transition"
-            />
-          </div>
+        {isAuthenticated ? (
+          <div className="flex divide-x-2 divide-white/20">
+            <div className="flex text-white/80 items-center gap-x-6 mr-4">
+              <CiShoppingCart
+                size={28}
+                className="hover:scale-110 cursor-pointer transition"
+              />
+              <CiBellOn
+                size={28}
+                className="hover:scale-110 cursor-pointer transition"
+              />
+            </div>
 
-          <div className="flex items-center text-white/60 gap-x-6 cursor-pointer">
-            <img
-              src={Profile}
-              alt="profile"
-              className="rounded-full w-[34px] ml-5 hover:scale-110 transition"
-            />
-            <BsFillCaretDownFill size={15} />
+            <div className="flex items-center text-white/60 gap-x-6 cursor-pointer">
+              <img
+                src={Profile}
+                alt="profile"
+                className="rounded-full w-[34px] ml-5 hover:scale-110 transition"
+              />
+              <BsFillCaretDownFill size={15} />
+            </div>
           </div>
-        </div>
+        ) : (
+          <div className="flex items-center gap-4 text-sm">
+            <p className="hover:border-b hover:border-white/60 transition ease-in">
+              <Link to="/login">Login</Link>
+            </p>
+            <span className="text-white/60">|</span>
+            <p className="hover:border-b hover:border-white/60 transition-all ease-in">
+              <Link to="/register">Register</Link>
+            </p>
+          </div>
+        )}
       </div>
     </div>
   );
