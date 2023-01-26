@@ -9,6 +9,7 @@ export const register = async (req, res, next) => {
   try {
     const salt = bcrypt.genSaltSync(10);
     const hash = bcrypt.hashSync(req.body.password, salt);
+    console.log(req.body);
     const { firstName, lastName, username, phoneNumber, email } = req.body;
     const newCustomer = new Customer({
       firstName,
@@ -19,9 +20,10 @@ export const register = async (req, res, next) => {
       password: hash,
     });
     await newCustomer.save();
+    const { password, ...customerData } = newCustomer._doc;
     return res.status(200).json({
       message: "Registration Successful",
-      newCustomer,
+      customerData,
     });
   } catch (error) {
     next(error);
@@ -50,14 +52,10 @@ export const login = async (req, res, next) => {
     );
 
     const { password, userType, ...others } = customer._doc;
+    console.log(others);
     return res
-      .cookie("access_token", token, {
-        httpOnly: true,
-        sameSite: "lax",
-        secure: false,
-      })
       .status(200)
-      .json({ message: "Logged in successfully ", ...others });
+      .json({ message: "Logged in successfully ", others, token });
   } catch (error) {
     next(error);
   }
