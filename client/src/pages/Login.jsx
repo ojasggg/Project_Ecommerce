@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, redirect, useNavigate } from "react-router-dom";
 
 import { AiOutlineGoogle } from "react-icons/ai";
 import { ImFacebook } from "react-icons/im";
@@ -39,7 +39,7 @@ const Login = () => {
         autoClose: 3000,
         pauseOnHover: false,
       });
-      setTimeout(() => navigate("/"), 2000);
+      setTimeout(() => window.location.replace("http://127.0.0.1:5173/"), 3000);
     } catch (error) {
       toast.error(error.response.data.message, {
         position: "bottom-right",
