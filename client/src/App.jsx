@@ -1,5 +1,6 @@
 import React from "react";
 import { Topbar, Navbar, Mid, Footer } from "./components";
+import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
   return (
